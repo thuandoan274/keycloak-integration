@@ -9,6 +9,7 @@ import { KeycloakService } from 'keycloak-angular';
 export class EditProfileComponent implements OnInit {
 
   user = '';
+  token = ''
 
   constructor(private keycloakService: KeycloakService) { }
 
@@ -18,6 +19,7 @@ export class EditProfileComponent implements OnInit {
 
   private initializeUserOptions(): void {
     this.user = this.keycloakService.getUsername();
+    this.keycloakService.getToken().then(token => this.token = token)
   }
 
   logout(): void {

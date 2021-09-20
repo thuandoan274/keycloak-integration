@@ -5,9 +5,9 @@ export function initializeKeycloak(keycloak: KeycloakService): () => Promise<boo
     return () =>
         keycloak.init({
             config: {
-                url: 'http://localhost:8080/auth',
-                realm: 'angular-web',
-                clientId: 'angular-web-client',
+                url: 'http://172.17.3.20/auth',
+                realm: 'Immowise',
+                clientId: 'angular-immowise-client',
             },
             initOptions: {
                 checkLoginIframe: true,
